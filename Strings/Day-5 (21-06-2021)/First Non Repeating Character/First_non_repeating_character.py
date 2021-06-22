@@ -2,15 +2,14 @@
 # For every char we traverse the remaining portion of the string to check for its next occurrence
 # O(n^2) TC and O(1) Space
 def find(s):
-    found_index = -1
-    for i in range(len(s)-1):
-        for j in range(i+1,len(s)):
-            if s[i]==s[j]:
-                break
-        else:
-            found_index=i
-            break
-    return found_index
+    for i in range(len(s)):
+        found = False
+        for j in range(len(s)):
+            if s[i]==s[j] and i!=j:
+                found = True
+        if not found:
+            return i
+    return -1
 
 s = "abbdcaf"
 print(find(s))
