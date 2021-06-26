@@ -8,6 +8,7 @@ def longestSubstring(s):
         f1 = False
         f2 = False
 
+        # Acquiring
         while i<len(s)-1:
             f1 = True
             i+=1
